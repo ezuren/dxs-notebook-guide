@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="2026大学生专业选笔记本电脑指南：按专业、课程软件和实际负载匹配CPU、内存、显卡、硬盘与推荐机型。">
+<meta name="theme-color" content="#1b3a8c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="大学生笔记本选购指南">
+<meta property="og:description" content="按专业、课程软件和实际负载匹配 CPU、内存、显卡、硬盘与推荐机型。">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<title>大学生笔记本选购指南</title>
+<style>
+/* ===== 设计 token =====
+   色相锚点：品牌深海军蓝 264°，冷色中性统一带 0.008~0.012 chroma 的蓝调 tint，
+   避免纯灰/纯黑；中性色阶按明度拉开，保证正文对比度 ≥ 4.5:1。 */
+:root{
+  /* 品牌色（蓝 264° / 天蓝 245° / 橙 62°） */
+  --primary:#1b3a8c;--primary2:#2f8ce8;--accent:#f5921e;--gold:#f5b301;
+  /* 中性色阶 —— 冷调 tint，非纯灰 */
+  --ink-1:oklch(27% 0.032 264);      /* 主标题 */
+  --ink-2:oklch(35% 0.026 264);      /* 正文 */
+  --ink-3:oklch(50% 0.022 264);      /* 次要文本 */
+  --ink-4:oklch(53% 0.022 264);      /* 弱化文本 / 占位 */
+  --line-1:#dde6f2;                  /* 常规边框 */
+  --line-2:#e9eef7;                  /* 极浅分隔线 */
+  --surface-0:#fff;                  /* 卡片 */
+  --surface-1:#f7f9fd;               /* 次级底 */
+  --surface-2:#eef3fb;               /* 三级底 / 弱按钮 */
+  --bg:#f5f8fc;
+  /* 语义色 */
+  --ok:#137333;--ok-bg:#eaf7ee;--warn-fg:#8a6100;--warn-bg:#fff8e6;--warn-line:#ffe08a;
+  --danger:#d92d20;--danger-bg:#fff1f1;--danger-line:#ffd4d2;--hot:#b54708;--hot-bg:#fff1df;
+  --primary-soft:#edf3ff;--primary-soft2:#eaf2ff;--primary-line:#c7dbff;
+  --text:var(--ink-1);--muted:var(--ink-3);--border:var(--line-1);
+  /* 间距（4pt 基准） */--s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;
+  /* 圆角 */--radius:18px;--radius-sm:12px;--radius-xs:10px;--radius-pill:999px;
+  /* 阴影层级 —— 含蓄、双层（近距轮廓 + 远距扩散） */
+  --sh-1:0 1px 2px rgba(21,42,84,.05),0 1px 3px rgba(21,42,84,.04);
+  --sh-2:0 2px 6px rgba(21,42,84,.06),0 8px 22px rgba(21,42,84,.06);
+  --sh-3:0 4px 12px rgba(21,42,84,.07),0 16px 40px rgba(21,42,84,.09);
+  --shadow:var(--sh-2);
+  /* 版式 */
+  --font-sans:"Inter Tight","HarmonyOS Sans SC","PingFang SC","MiSans","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  /* 缓动 */--ease-out-quart:cubic-bezier(.25,1,.5,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);--dur-1:.14s;--dur-2:.22s;--dur-3:.34s;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-sans);font-kerning:normal;font-feature-settings:"kern" 1,"liga" 1;color:var(--text);background:linear-gradient(180deg,#e9f1fd 0,#f6f9fd 380px,var(--bg) 100%)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+a{text-decoration:none;color:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(221,230,242,.9)}
+.nav{height:68px;display:flex;align-items:center;justify-content:flex-end;gap:16px}.nav-right{display:flex;align-items:center;gap:20px}
+.wx-wrap{position:relative}
+.wx-btn{display:inline-flex;align-items:center;gap:7px;border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:13px;padding:9px 14px;border-radius:11px;background:#07c160;color:#fff;box-shadow:0 4px 12px rgba(7,193,96,.24);transition:transform var(--dur-1) var(--ease-out-quart),box-shadow var(--dur-2) var(--ease-out-quart),background var(--dur-2) var(--ease-out-quart)}
+.wx-btn:hover{background:#06ad56;transform:translateY(-1px);box-shadow:0 8px 20px rgba(7,193,96,.32)}
+.wx-btn:active{transform:translateY(0) scale(.98);box-shadow:0 3px 8px rgba(7,193,96,.24)}
+.wx-btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.wx-btn svg{width:17px;height:17px;fill:currentColor;flex:none}
+.wx-pop{position:absolute;top:calc(100% + 10px);right:0;z-index:30;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh-3);padding:14px;display:none;flex-direction:column;align-items:center;gap:8px;width:210px;transform-origin:top right;animation:popIn var(--dur-2) var(--ease-out-quart)}
+@keyframes popIn{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
+.wx-pop img{width:180px;height:180px;border-radius:10px;display:block}
+.wx-pop span{font-size:12px;color:var(--ink-3);font-weight:700}
+.wx-wrap:hover .wx-pop,.wx-wrap.open .wx-pop{display:flex}
+.nav-links{display:flex;gap:22px;color:var(--ink-3);font-size:14px;font-weight:600}.nav-links a{position:relative;padding:4px 0;transition:color var(--dur-2) var(--ease-out-quart)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-2) var(--ease-out-quart)}
+.nav-links a:hover{color:var(--primary)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a:focus-visible{outline:2px solid var(--primary);outline-offset:4px;border-radius:4px}
+.hero{padding:56px 0 44px}.hero-grid{display:grid;grid-template-columns:29% 1fr;gap:10px;align-items:center}
+.hero-logo-wrap{display:flex;justify-content:flex-end;align-self:end}
+.hero-logo{display:block;width:100%;max-width:340px;height:auto;object-fit:contain;mix-blend-mode:multiply}
+.eyebrow{display:inline-flex;padding:7px 11px;border-radius:999px;background:var(--primary-soft2);color:var(--primary);font-weight:800;font-size:12px;letter-spacing:.2px}
+.hero h1{font-size:clamp(36px,5.3vw,66px);line-height:1.04;margin:18px 0 16px;letter-spacing:-2.6px;font-weight:800}
+.hero p{font-size:18px;line-height:1.75;color:var(--ink-3);max-width:760px;margin:0 0 24px}
+.searchbar{display:flex;gap:10px;background:var(--surface-0);padding:10px;border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh-2);max-width:760px;transition:box-shadow var(--dur-2) var(--ease-out-quart),border-color var(--dur-2) var(--ease-out-quart)}
+.searchbar:focus-within{border-color:var(--primary-line);box-shadow:0 0 0 4px rgba(47,140,232,.12),var(--sh-3)}
+.searchbar input{flex:1;border:0;outline:0;font-size:15px;padding:12px;background:transparent;font-family:inherit;color:var(--ink-1)}
+.searchbar input::placeholder{color:var(--ink-4)}
+.btn{border:0;border-radius:12px;padding:12px 16px;font-size:14px;font-weight:800;cursor:pointer;background:var(--primary);color:#fff;font-family:inherit;transition:transform var(--dur-1) var(--ease-out-quart),box-shadow var(--dur-2) var(--ease-out-quart),background var(--dur-2) var(--ease-out-quart)}
+.btn:hover{background:#17327c;transform:translateY(-1px);box-shadow:0 8px 20px rgba(27,58,140,.24)}
+.btn:active{transform:translateY(0) scale(.985);box-shadow:0 3px 8px rgba(27,58,140,.2)}
+.btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.btn.secondary{background:var(--primary-soft);color:var(--primary)}
+section{padding:30px 0 10px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:18px}.section-head h2{font-size:28px;margin:0;letter-spacing:-.7px;font-weight:800}.section-head p{margin:0;color:var(--muted);font-size:14px}
+.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.level{background:var(--surface-0);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--sh-1)}.level .tag{font-size:12px;color:var(--primary);font-weight:800}.level h3{margin:8px 0 9px;font-size:18px}.level p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;padding:14px;background:var(--surface-0);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh-1);margin-bottom:16px}
+.filter{border:1px solid var(--border);background:var(--surface-0);padding:10px 13px;border-radius:var(--radius-xs);cursor:pointer;color:var(--ink-3);font-weight:700;font-size:13px;font-family:inherit;transition:background var(--dur-2) var(--ease-out-quart),border-color var(--dur-2) var(--ease-out-quart),color var(--dur-2) var(--ease-out-quart),transform var(--dur-1) var(--ease-out-quart)}
+.filter:hover{border-color:var(--primary-line);color:var(--primary);background:var(--primary-soft)}
+.filter:active{transform:scale(.97)}
+.filter.active{background:var(--primary-soft2);border-color:var(--primary-line);color:var(--primary)}
+.toolbar .filter:focus-visible,.filter.active:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.table-wrap{overflow:auto;background:var(--surface-0);border:1px solid var(--border);border-radius:18px;box-shadow:var(--sh-2)}
+table{width:100%;border-collapse:collapse;min-width:1080px;font-variant-numeric:tabular-nums}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line-2);font-size:13px;vertical-align:top}
+th{background:var(--surface-1);color:var(--ink-3);font-size:12px;position:sticky;top:0;z-index:1;letter-spacing:.3px;font-weight:800;box-shadow:inset 0 -1px 0 var(--line-1)}
+tbody tr{transition:background var(--dur-1) var(--ease-out-quart)}
+tbody tr:hover{background:var(--surface-1)}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;padding:5px 9px;background:var(--surface-2);color:var(--ink-3);border-radius:var(--radius-pill);margin:2px 4px 2px 0;font-size:11px;font-weight:600}
+#majorBody td:first-child{white-space:nowrap}#majorBody td:nth-child(2){white-space:nowrap}.gpu{white-space:nowrap;border-radius:var(--radius-pill)}
+.gpu.yes{color:var(--hot);background:var(--hot-bg)}.gpu.no{color:var(--ok);background:var(--ok-bg)}.gpu.maybe{color:#6250a4;background:#f0ecff}
+.empty{padding:44px;text-align:center;color:var(--muted)}
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.rec{background:var(--surface-0);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--sh-2);display:flex;flex-direction:column;transition:box-shadow var(--dur-3) var(--ease-out-quart),transform var(--dur-3) var(--ease-out-quart),border-color var(--dur-3) var(--ease-out-quart);will-change:transform}
+.rec:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:#cfddf2}
+.rec h3{margin:0 0 8px;font-size:20px;letter-spacing:-.3px;font-weight:800}
+.rec p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.65}
+.rec dl{display:grid;grid-template-columns:64px 1fr;gap:8px 12px;margin:0 0 18px;font-size:13px}
+.rec dt{color:var(--ink-4)}.rec dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.rec .actions{display:flex;gap:8px;margin-top:auto}
+.rec .actions a{flex:1;text-align:center;padding:11px;border-radius:var(--radius-xs);font-weight:800;font-size:13px;transition:transform var(--dur-1) var(--ease-out-quart),box-shadow var(--dur-2) var(--ease-out-quart),filter var(--dur-2) var(--ease-out-quart)}
+.rec .actions a:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.rec .actions a:active{transform:translateY(0) scale(.985)}
+.rec .actions a:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.rec-toolbar{align-items:center}.sales-note{margin-left:auto;color:var(--ink-3);font-size:12px;font-weight:700}.sales-rank{font-size:11px;color:var(--ink-4);margin-top:1px}
+.variant-tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px}
+.variant-tab{border:1px solid var(--border);background:var(--surface-1);color:var(--ink-3);padding:7px 11px;border-radius:var(--radius-xs);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:border-color var(--dur-2) var(--ease-out-quart),color var(--dur-2) var(--ease-out-quart),background var(--dur-2) var(--ease-out-quart)}
+.variant-tab:hover{border-color:var(--primary-line);color:var(--primary)}
+.variant-tab.active{background:var(--primary-soft2);border-color:var(--primary-line);color:var(--primary)}
+.variant-tab:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.variant-tabs .size-only{display:inline-flex;padding:5px 9px;border-radius:var(--radius-pill);background:var(--primary-soft2);color:var(--primary);font-size:11px;font-weight:800}
+.variant-tabs .hint{font-size:11px;color:var(--ink-4);font-weight:600}
+.thumb{height:172px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(150deg,#f1f6fd,#e3edfb);display:grid;place-items:center;overflow:hidden;margin-bottom:14px;position:relative}
+/* 左上角悬浮：类别 · 品牌；右上角：版本；右下角：尺寸 + ⚠ */
+.rec .thumb .label{position:absolute;top:10px;left:10px;margin:0;padding:5px 10px;border-radius:var(--radius-pill);background:linear-gradient(135deg,rgba(20,40,88,.78),rgba(27,58,140,.72));color:#fff;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:none;z-index:2;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);box-shadow:0 2px 10px rgba(15,32,74,.28)}
+.ov-br{position:absolute;right:10px;bottom:10px;display:flex;align-items:center;justify-content:flex-end;gap:6px;z-index:2;max-width:calc(100% - 20px);flex-wrap:wrap}
+.ov-tr{position:absolute;top:10px;right:10px;display:flex;align-items:center;justify-content:flex-end;gap:6px;z-index:2;max-width:calc(100% - 20px)}
+.ovb{padding:5px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:800;background:rgba(255,255,255,.78);color:var(--primary);box-shadow:0 2px 8px rgba(30,58,95,.18),inset 0 1px 0 rgba(255,255,255,.6);white-space:nowrap;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.5)}
+.ovb.ov-ver{background:rgba(255,248,230,.82);color:var(--warn-fg);border-color:rgba(255,224,138,.7)}
+.thumb img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;background:#fff;display:block}
+/* 京东方图多为促销海报：裁中部横带（负 margin 相对容器宽，等效 cover 居中偏下），露出产品主体；宽图仍整图显示 */
+.thumb img.poster{height:auto;object-fit:fill;margin-top:-21%}
+/* bg 模式：background 放大+定位取图（如「左广告右产品」构图取右侧产品区），无 headless object-position 兼容问题 */
+.thumb-bg{position:absolute;inset:0;background-repeat:no-repeat;background-color:#fff}
+.thumb-fallback{font-size:20px;font-weight:900;color:#8fa8d6;letter-spacing:3px}
+.price-box{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border-radius:var(--radius-sm);background:var(--surface-2);border:1px solid var(--primary-line);margin:0 0 12px}
+.price-key{font-size:12px;font-weight:800;color:var(--primary)}
+.price-note{font-size:11px;color:var(--ink-4);line-height:1.5}
+.rec-select{width:100%;max-width:190px;border:1px solid var(--primary-line);background:var(--primary-soft);color:var(--primary);border-radius:var(--radius-xs);padding:7px 6px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:background var(--dur-2) var(--ease-out-quart),border-color var(--dur-2) var(--ease-out-quart)}
+.rec-select:hover{background:#dcebff;border-color:#a9c9f8}
+.rec-select:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.jumpbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 16px}
+.jumpbar select{flex:1;min-width:220px;max-width:420px;border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 12px;font-size:14px;font-family:inherit;color:var(--ink-1);background:var(--surface-0);cursor:pointer;transition:border-color var(--dur-2) var(--ease-out-quart),box-shadow var(--dur-2) var(--ease-out-quart)}
+.jumpbar select:hover{border-color:var(--primary-line)}
+.jumpbar select:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.btn.ghost{background:var(--primary-soft);color:var(--primary)}.jump-hint{font-size:12px;color:var(--ink-4)}
+.toolbar[hidden],.jumpbar [hidden]{display:none}
+.recs.single{grid-template-columns:minmax(0,460px);justify-content:center}
+.rec.flash{outline:2px solid var(--primary);outline-offset:4px;box-shadow:0 0 0 6px rgba(47,140,232,.14),var(--sh-3);animation:flashPulse .5s var(--ease-out-quart)}
+@keyframes flashPulse{from{transform:scale(.99)}to{transform:none}}
+.rec .actions a.single{flex:1;text-align:center;padding:11px;border-radius:var(--radius-xs);font-weight:800;font-size:13px;background:var(--danger-bg);color:var(--danger);border:1px solid var(--danger-line)}
+.warn{display:block;padding:10px 12px;border-radius:var(--radius-sm);background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);font-size:12px;line-height:1.7;margin:0 0 14px}
+.warn[hidden]{display:none}
+.warn-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-left:10px;border-radius:50%;border:2px solid #d97a06;background:linear-gradient(145deg,#ffb347,var(--accent));color:#fff;font-size:17px;font-weight:900;line-height:1;cursor:pointer;padding:0;vertical-align:-4px;box-shadow:0 3px 10px rgba(245,146,30,.42),inset 0 1px 0 rgba(255,255,255,.4);transition:transform var(--dur-1) var(--ease-out-quart),box-shadow var(--dur-2) var(--ease-out-quart)}
+.warn-badge:hover{transform:scale(1.12);box-shadow:0 6px 16px rgba(245,146,30,.58),inset 0 1px 0 rgba(255,255,255,.5)}
+.warn-badge:active{transform:scale(.95)}
+.warn-badge:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.rank-tag{display:inline-block;padding:4px 8px;border-radius:7px;background:var(--hot-bg);color:var(--hot);font-size:11px;font-weight:800;margin-right:6px}
+.jd{background:var(--danger-bg);color:var(--danger);border:1px solid var(--danger-line)}
+.copy{background:var(--primary-soft);color:var(--primary);border:1px solid var(--primary-line)}
+.detail{display:grid;grid-template-columns:1fr .8fr;gap:18px}
+.detail-card{background:var(--surface-0);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--sh-2)}
+.detail-card h3{margin:0 0 12px;font-size:21px}.detail-list{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:120px 1fr;gap:15px;padding:11px 0;border-bottom:1px dashed var(--line-2);font-size:13px}
+.row:last-child{border-bottom:0}.row .k{color:var(--ink-3)}
+.notice{padding:14px;border-radius:14px;background:var(--surface-2);color:var(--ink-3);font-size:13px;line-height:1.7}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.noscript{margin:0;padding:14px 20px;background:#fff7ed;color:#9a3412;font-size:13px;text-align:center}
+footer{padding:44px 0;color:var(--ink-4);font-size:12px;text-align:center}
+footer a{transition:color var(--dur-2) var(--ease-out-quart)}
+footer a:hover{color:var(--primary2)!important}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-logo-wrap{justify-content:flex-start}.levels{grid-template-columns:repeat(2,1fr)}.recs{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+@media(max-width:560px){.hero{padding-top:44px}.hero h1{letter-spacing:-1.5px}.hero p{font-size:16px}.levels,.recs{grid-template-columns:1fr}.searchbar{flex-direction:column}.searchbar .btn{width:100%}.section-head{align-items:flex-start;flex-direction:column}.container{width:min(100% - 22px,1180px)}}
+</style>
+</head>
+<body>
+<noscript><p class="noscript">当前浏览器已禁用 JavaScript，专业表格与推荐机型无法渲染。请开启 JavaScript 后刷新页面。</p></noscript>
+<header>
+  <div class="container nav">
+    <div class="nav-right">
+      <div class="wx-wrap" id="wxWrap">
+        <button type="button" class="wx-btn" id="wxBtn" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 4C5.36 4 2 6.87 2 10.42c0 1.98 1.03 3.73 2.65 4.93l-.66 2.24 2.56-1.28c.79.24 1.63.38 2.5.39A6.1 6.1 0 0 1 9 15.2c0-3.31 3.13-6 7-6 .23 0 .45.01.67.03C16.02 6.24 13.06 4 9.5 4zM7.2 8.3a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.8-.05a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/><path d="M22 15.1c0-2.95-2.91-5.35-6.5-5.35S9 12.15 9 15.1s2.91 5.35 6.5 5.35c.78 0 1.52-.11 2.21-.31l2.34 1.16-.62-2.06A5.15 5.15 0 0 0 22 15.1zm-8.7-1.55a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7zm4.4 0a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7z"/></svg>
+          微信联系曾工
+        </button>
+        <div class="wx-pop" role="dialog" aria-label="微信二维码">
+          <img src="assets/wx.png" alt="微信扫码联系曾工" width="180" height="180">
+          <span>微信扫码联系曾工</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="主导航"><a href="#majors">专业匹配</a><a href="#recommend">推荐机型</a></nav>
+    </div>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-logo-wrap">
+        <img src="assets/logo.png" alt="大学生笔记本选购指南 LOGO" class="hero-logo" loading="eager" decoding="async">
+      </div>
+      <div>
+        <h1>根据专业 选择笔电</h1>
+        <p>把大学专业常用软件、课程负载和硬件需求放在一起比较。查文科办公、程序开发、机械设计、建筑 BIM、GIS、视频创作、AI 等场景，快速得到对应配置方向。</p>
+        <div class="searchbar" role="search">
+          <label class="sr-only" for="search">搜索专业</label>
+          <input id="search" type="search" placeholder="搜索专业，例如：计算机、电气、机械、人工智能、会计…">
+          <button class="btn" id="searchBtn" type="button">搜索专业</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="majors"><div class="container">
+    <div class="section-head"><div><h2>大学专业配置库</h2><p>覆盖常见本科专业，可按需求类型或关键词快速筛选。</p></div></div>
+    <div class="toolbar" id="filters" role="group" aria-label="按需求类型筛选"></div>
+    <div class="table-wrap"><table><thead><tr><th scope="col">专业</th><th scope="col">需求类型</th><th scope="col">常见软件/用途</th><th scope="col">推荐机型</th></tr></thead><tbody id="majorBody"></tbody></table><div class="empty" id="empty" style="display:none">没有找到匹配专业，试试“计算机 / 电气 / 机械 / 会计 / 人工智能”。</div></div>
+  </div></section>
+
+  <section id="recommend"><div class="container">
+    <div class="toolbar rec-toolbar" id="catBar" role="group" aria-label="按类别筛选">
+      <button class="filter active" type="button" data-cat="全部" aria-pressed="true">全部</button>
+      <button class="filter" type="button" data-cat="轻薄办公本" aria-pressed="false">轻薄办公本</button>
+      <button class="filter" type="button" data-cat="高性能笔记本" aria-pressed="false">高性能笔记本</button>
+      <button class="filter" type="button" data-cat="Mac" aria-pressed="false">Mac（Apple 芯片）</button>
+      <span class="sales-note">共 <b id="recCount">23</b> 个系列 ↓</span>
+    </div>
+    <div class="recs" id="recGrid"></div>
+  </div></section>
+</main>
+<footer><div class="container">大学生选购指南是曾工为方便运维单位客户构建 · 指南更新时间（6.18–9.15） · <a href="https://www.1672268.xyz" target="_blank" rel="noopener" style="color:#1b3a8c;font-weight:700">曾工网络自留地</a></div></footer>
+<script>
+const majors=[
+['汉语言文学','轻办公型','Office、WPS、知网、文献管理','i5/R5 · 16GB · 512GB · 核显','no'],['历史学','轻办公型','Office、数据库、文献管理','i5/R5 · 16GB · 512GB · 核显','no'],['哲学','轻办公型','Office、文献、论文','i5/R5 · 16GB · 512GB · 核显','no'],['法学','轻办公型','Office、法律数据库、PDF','i5/R5 · 16GB · 512GB · 核显','no'],['社会学','数据分析型','SPSS、Office、统计','i5/R5 · 16GB/32GB · 512GB/1TB','no'],['新闻学','轻办公型','Office、PS、基础剪辑','i5/R5 · 16GB · 1TB','maybe'],['广播电视学','创作/AI型','PS、PR、剪映、AE','i7/R7 · 32GB · 1TB · RTX级','yes'],['英语','轻办公型','Office、翻译、音视频','i5/R5 · 16GB · 512GB','no'],['教育学','轻办公型','Office、SPSS、课件','i5/R5 · 16GB · 512GB','no'],['金融学','数据分析型','Excel、Python、Stata、量化软件','i5/i7 或 R5/R7 · 32GB · 1TB','no'],['经济学','数据分析型','Excel、Python、R、Stata','i5/i7 或 R5/R7 · 16/32GB · 1TB','no'],['会计学','轻办公型','Excel、财务软件','i5/R5 · 16GB · 512GB/1TB','no'],['电子商务','数据分析型','Office、PS、网页、数据分析','i5/R5 · 16/32GB · 1TB','maybe'],['计算机科学与技术','程序开发型','VS、IDEA、Android Studio、Docker','i7/R7 · 32GB · 1TB','maybe'],['软件工程','程序开发型','IDEA、VS、Docker、数据库','i7/R7 · 32GB · 1TB','maybe'],['网络工程','程序开发型','VMware、GNS3、EVE-NG','i7/R7 · 32GB · 1TB','no'],['信息安全','程序开发型','Kali、虚拟机、Docker','i7/R7 · 32/64GB · 1TB','no'],['数据科学','程序开发型','Python、R、Jupyter、数据库','i7/R7 · 32GB · 1TB','maybe'],['大数据技术','程序开发型','Hadoop、Spark、虚拟机','i7/R7 · 32/64GB · 1TB','no'],['人工智能','创作/AI型','Python、PyTorch、CUDA、深度学习','i7/R7 · 32/64GB · 1/2TB · NVIDIA RTX','yes'],['物联网工程','程序开发型','C/C++、Python、STM32、ESP32、Keil、CubeMX、VS Code、Android Studio、Linux','Core Ultra 5/7 或 Ryzen 7 · 32GB · 1TB · 核显','maybe'],['电子信息工程','工程设计型','MATLAB、Multisim、Altium','i7/R7 · 32GB · 1TB','maybe'],['通信工程','工程设计型','MATLAB、通信仿真','i7/R7 · 32GB · 1TB','maybe'],['电气工程及其自动化','工程设计型','MATLAB、PSCAD、CAD','i7/R7 · 32GB · 1TB','maybe'],['自动化','工程设计型','MATLAB、PLC、CAD','i7/R7 · 32GB · 1TB','maybe'],['机器人工程','工程设计型','MATLAB、ROS、3D仿真','i7/R7 · 32GB · 1TB · RTX级','yes'],['集成电路','工程设计型','EDA、Cadence、Vivado','i7/R7 · 32/64GB · 1/2TB','maybe'],['机械设计制造及其自动化','工程设计型','AutoCAD、SolidWorks、Creo、UG','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['车辆工程','工程设计型','CATIA、UG、SolidWorks','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['机械电子工程','工程设计型','CAD、SolidWorks、MATLAB','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['工业设计','工程设计型','Rhino、SolidWorks、KeyShot','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['土木工程','工程设计型','AutoCAD、PKPM、广联达、Revit','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['工程造价','工程设计型','广联达、CAD、Office','i5/i7 · 16/32GB · 1TB','maybe'],['工程管理','工程设计型','CAD、BIM、Office','i7/R7 · 32GB · 1TB','yes'],['建筑学','工程设计型','CAD、Revit、SketchUp、Lumion','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['城乡规划','工程设计型','CAD、GIS、SketchUp','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['测绘工程','工程设计型','CAD、ArcGIS、测绘软件','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['地理信息科学','工程设计型','ArcGIS Pro、遥感软件','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['遥感科学与技术','工程设计型','ArcGIS、遥感、影像处理','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['视觉传达设计','创作/AI型','PS、AI、InDesign','i7/R7 · 32GB · 1TB','maybe'],['数字媒体艺术','创作/AI型','PS、AI、AE、PR、Blender','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['环境设计','工程设计型','CAD、SketchUp、3ds Max','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['产品设计','工程设计型','Rhino、KeyShot、CAD','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['动画','创作/AI型','Maya、Blender、AE','i7/R7 · 32/64GB · 1/2TB · RTX 5070级','yes'],['游戏设计','创作/AI型','Unity、Unreal Engine、Blender','i7/R7 · 32GB · 1/2TB · RTX 5060/5070','yes'],['影视摄影与制作','创作/AI型','Premiere、AE、DaVinci','i7/R7 · 32GB · 1/2TB · RTX 5060/5070','yes'],['临床医学','轻办公型','Office、文献、统计','i5/R5 · 16GB · 512GB','no'],['口腔医学','轻办公型','Office、影像、文献','i5/R5 · 16GB · 512GB','no'],['药学','轻办公型','Office、ChemDraw、统计','i5/i7 · 16/32GB · 1TB','no'],['生物科学','数据分析型','MATLAB、统计、数据分析','i5/i7 · 16/32GB · 1TB','maybe'],['医学影像学','工程设计型','医学影像、3D、图像处理','i7 · 32GB · 1TB · RTX级','yes'],['农学','轻办公型','Office、资料、数据','i5/R5 · 16GB · 512GB','no'],['园林','工程设计型','CAD、SketchUp、Lumion','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['航空航天工程','工程设计型','MATLAB、CAD、仿真','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['船舶与海洋工程','工程设计型','CAD、CAE、仿真','i7/R7 · 32GB · 1TB · RTX 5060级','yes'],['新能源科学与工程','工程设计型','MATLAB、仿真、CAD','i7/R7 · 32GB · 1TB','maybe'],['新能源汽车工程','工程设计型','CAD、仿真、MATLAB','i7/R7 · 32GB · 1TB · RTX 5060级','yes']
+];
+// 同一系列的 14 英寸 / 16 英寸合并为一个条目；variants 为该系列在售尺寸版本。
+// pick = 默认展示尺寸（取该系列销量参考更靠前的尺寸）。
+const js=k=>'https://search.jd.com/Search?keyword='+encodeURIComponent(k)+'&sort_type=sort_totalsales15_desc';
+const item=id=>'https://item.jd.com/'+id+'.html';
+// 数据来源：京东官方「笔记本排行榜」「游戏本排行榜」实时 TOP10（2026-09-27 抓取）
+// 以及京东官方学生轻薄本/游戏本热卖榜、618 笔记本热卖榜公开报道。
+// 同一系列的多种屏幕尺寸合并为一个条目，可在卡片内切换。
+// cat：轻薄办公本 / 高性能笔记本 / Mac；grp：14=便携小屏(13~15英寸)，16=大屏(16英寸)
+const series=[
+{id:'xiaoxin16se',brand:'联想',cat:'轻薄办公本',pick:'16英寸',name:'小新 16SE 高能本',ver:'锐龙版 / 酷睿版',desc:'京东笔记本综合榜实时第 1 位。标压锐龙 + 预留扩展硬盘位的大屏轻薄本，是这个榜里价格最友好的选择之一，适合预算有限但想要大屏、准备用到毕业的学生。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东笔记本综合榜 TOP1',reviews:'2万+条评价',url:item(100309811503),img:'assets/products/xiaoxin16se.jpg?v=3',spec:[['CPU','标压锐龙 R7'],['内存','16GB'],['SSD','512GB（可扩展硬盘位）'],['GPU','核显'],['屏幕','16英寸大屏']]}
+]},
+{id:'tianxuan7pro',brand:'华硕',cat:'高性能笔记本',pick:'16英寸',name:'天选7 Pro 酷睿版',ver:'酷睿版 / 锐龙版',desc:'京东游戏本榜实时第 1、笔记本综合榜第 2，是真正意义上的"本期最热机型"。三维建模、渲染、剪辑、影视后期都吃得下，也能兼顾重度游戏。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'游戏本榜 TOP1 · 综合榜 TOP2',reviews:'5万+条评价',url:item(100352388758),img:'assets/products/tianxuan7pro.jpg?v=4',spec:[['CPU','酷睿 Ultra 7 251HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 300Hz']]}
+]},
+{id:'y7000x',brand:'联想',cat:'高性能笔记本',pick:'16英寸',name:'拯救者 Y7000X 2026',desc:'拯救者家族里的 OLED 屏版本，2.5K OLED 在看图、修图、看设计稿时比普通 IPS 更舒服；游戏性能与 Y7000P 同档，适合设计类专业兼顾游戏。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东笔记本综合榜 TOP3',reviews:'2万+条评价',url:item(100265748693),img:'assets/products/y7000x.jpg',spec:[['CPU','Core 7 245HX'],['内存','16GB'],['SSD','512GB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · OLED']]}
+]},
+{id:'y7000p',brand:'联想',cat:'高性能笔记本',pick:'16英寸',name:'拯救者 Y7000P 2026',ver:'酷睿版 / 锐龙版',desc:'综合榜第 4、游戏本榜第 2，评价数超 10 万条，是工科最常买的一台。2.5K 240Hz 100% DCI-P3 广色域屏，画图看图纸色差小，售后网点多、内存硬盘可自行升级，大学四年基本不用换机。同配置的锐龙版叫 R7000P，价格更低时也可考虑。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'综合榜 TOP4 · 游戏本榜 TOP2',reviews:'10万+条评价',url:item(100377392022),img:'assets/products/y7000p.jpg',spec:[['CPU','酷睿 i7-14650HX'],['内存','16GB'],['SSD','512GB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 240Hz · 100% DCI-P3']]}
+]},
+{id:'macbookair',brand:'苹果',cat:'Mac',pick:'13.6英寸',name:'MacBook Air 13 英寸 M5',desc:'京东笔记本综合榜第 5、第 10 双 SKU 在榜，618 笔记本热卖榜也曾登顶。无风扇静音 + 超长续航 + 1kg 出头的重量，是文科、经管、语言、新闻、教育专业的事实标配，回收保值率也最好。',warn:'工科慎选：SolidWorks、CATIA、UG、Revit、广联达、PKPM、ArcGIS Pro 及部分 EDA 教学软件仅支持 Windows，macOS 跑不了。下单前务必核对学院软件清单。',mem:[16,24,32],ssd:['256GB','512GB','1TB','2TB'],variants:[
+ {size:'13.6英寸',grp:'14',tag:'京东笔记本综合榜 TOP5',reviews:'20万+条评价',url:item(100321991516),img:'assets/products/macbookair.jpg',spec:[['CPU','Apple M5（10核GPU）'],['内存','16GB'],['SSD','512GB'],['GPU','M5 集成显卡'],['屏幕','13.6英寸']]},
+ {size:'13.6英寸 · 大存储版',grp:'14',tag:'京东笔记本综合榜 TOP10',reviews:'20万+条评价',url:item(100328375326),img:'assets/products/macbookair.jpg',spec:[['CPU','Apple M5（10核GPU）'],['内存','16GB'],['SSD','1TB'],['GPU','M5 集成显卡'],['屏幕','13.6英寸']]},
+ {size:'15英寸',grp:'14',tag:'京东618笔记本热卖榜 TOP3',reviews:'Mac 品类头部',url:js('MacBook Air 15 M5'),img:'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba15-starlight-select-202503?wid=1000&hei=625&fmt=jpeg&qlt=90',spec:[['CPU','Apple M5'],['内存','16GB 起'],['SSD','512GB 起'],['GPU','M5 集成显卡'],['屏幕','15英寸']]}
+]},
+{id:'tianxuan6pro',brand:'华硕',cat:'高性能笔记本',pick:'16英寸',name:'天选6 Pro 锐龙版',ver:'锐龙版 / 酷睿版',desc:'综合榜第 6，评价数已达 20 万条。16 核锐龙 9 多核算力强，编译代码、跑渲染、做三维都很合适；作为天选 7 Pro 的上一代，通常价格更友好。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东笔记本综合榜 TOP6',reviews:'20万+条评价',url:item(100336044756),img:'assets/products/tianxuan6pro.jpg',spec:[['CPU','锐龙 9 8940HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K']]}
+]},
+{id:'jiguangx',brand:'机械革命',cat:'高性能笔记本',pick:'16英寸',name:'极光X 2026',desc:'京东"学生爱买游戏本"热卖榜第 1（7 月榜），靠的就是同价位堆料：200W 性能释放 + 满功耗 RTX 5060。预算有限又要性能的学生买它最划算。',warn:'二线品牌，校内与线下保修网点远少于联想/华硕，故障只能寄修。电脑小白或特别在意售后的慎选。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东学生游戏本榜 TOP1',reviews:'20万+条评价',url:js('机械革命极光X 2026'),img:'assets/products/jiguangx.jpg',spec:[['CPU','酷睿 Ultra 7 251HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060（满功耗）'],['屏幕','16英寸 · 2.5K · 300Hz']]}
+]},
+{id:'y9000p',brand:'联想',cat:'高性能笔记本',pick:'16英寸',name:'拯救者 Y9000P 2026',ver:'酷睿版 / 锐龙版',desc:'综合榜第 7，i9 +满血 RTX 5060 的旗舰级释放。适合动画、影视剪辑、大量三维渲染，以及打算一台用满四年不想折腾的同学。预算要相应更高。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东笔记本综合榜 TOP7',reviews:'5万+条评价',url:item(100349663228),img:'assets/products/y9000p.jpg',spec:[['CPU','酷睿 i9 14900HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 240Hz']]}
+]},
+{id:'xiaoxinpro16',brand:'联想',cat:'轻薄办公本',pick:'16英寸',name:'小新 Pro 16 超能本',ver:'锐龙版 / 酷睿版',desc:'综合榜第 8、游戏本榜第 3，榜单里少见的高位轻薄本。24GB 内存 + 1TB + 2.8K OLED，金融统计、数据分析、写代码、批量处理 Excel 都很顺，也不必天天背充电器。',warn:'核显机型，不能指望它跑三维渲染和大型游戏；机械、建筑、动画类专业请选下面带 RTX 的机型。',mem:[16,24,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'综合榜 TOP8 · 游戏本榜 TOP3',reviews:'2万+条评价',url:item(100322176814),img:'assets/products/xiaoxinpro16.jpg',spec:[['CPU','锐龙 7 H 255'],['内存','24GB'],['SSD','1TB'],['GPU','核显'],['屏幕','16英寸 · 2.8K · 120Hz · OLED']]}
+]},
+{id:'r9000p',brand:'联想',cat:'高性能笔记本',pick:'16英寸',name:'拯救者 R9000P 2026',ver:'锐龙版 / 酷睿版',desc:'综合榜第 9、游戏本榜第 5，评价 20 万条以上。锐龙 9 旗舰多线程强，适合渲染、编译、开虚拟机；评论区普遍反馈标配 16GB 偏紧，建议到手加到 32GB。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'综合榜 TOP9 · 游戏本榜 TOP5',reviews:'20万+条评价',url:item(100349257480),img:'assets/products/r9000p.jpg',spec:[['CPU','锐龙 9 8945HX'],['内存','16GB（建议升到 32GB）'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 240Hz']]}
+]},
+{id:'omenpro16',brand:'惠普',cat:'高性能笔记本',pick:'16英寸',name:'HyperX 暗影精灵 PRO 16',ver:'锐龙版 / 酷睿版',desc:'游戏本榜第 4，用的是高端锐龙 R9-9955HX，CPU 规格比同价位常见的 U7/R7 更高一档，适合既要 3D 又要剪片的同学。上架时间较短，评价基数小于拯救者。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东游戏本榜 TOP4',reviews:'1万+条评价',url:item(100257717777),img:'assets/products/omenpro16.jpg',spec:[['CPU','锐龙 9 9955HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 240Hz']]}
+]},
+{id:'mbp14',brand:'苹果',cat:'Mac',pick:'14英寸',name:'MacBook Pro 14 英寸 M5',desc:'即便在游戏本榜也稳居前列（第 7、第 8），本质是创作本：主动散热 + 高亮度屏，长时间导出视频比 Air 稳定得多。影视后期、音乐制作、摄影修图、本地跑小模型的主力机。',warn:'同样运行 macOS，仅限 Windows 的工科教学软件不可用；M 系列不支持 NVIDIA CUDA，深度学习训练请选 RTX 机型。',mem:[16,24,32,48],ssd:['512GB','1TB','2TB'],variants:[
+ {size:'14英寸',grp:'14',tag:'京东游戏本榜 TOP7 / TOP8',reviews:'5万+条评价',url:item(100216921583),img:'assets/products/mbp14.jpg',spec:[['CPU','Apple M5（10核CPU+10核GPU）'],['内存','16GB / 24GB'],['SSD','1TB'],['GPU','M5 集成显卡'],['屏幕','14英寸']]}
+]},
+{id:'rogmoba',brand:'ROG',cat:'高性能笔记本',pick:'16英寸',name:'魔霸新锐 2026',ver:'锐龙版 / 酷睿版',desc:'游戏本榜第 9，ROG 的高性能线。散热堆得足、灯效和做工是卖点，适合既要跑 Blender/UE 又要打游戏、还看重外观的同学，价格比同配置一线略高。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东游戏本榜 TOP9',reviews:'5万+条评价',url:item(100270652083),img:'assets/products/rogmoba.jpg',spec:[['CPU','锐龙 9 8940HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 300Hz']]}
+]},
+{id:'wuwei16se',brand:'华硕',cat:'轻薄办公本',pick:'16英寸',name:'无畏 16SE 2026',ver:'酷睿版 / 锐龙版',desc:'游戏本榜第 10（实际是全金属轻薄本），主打大屏 + 高刷 + 长续航。预算不高、主要做 Office、网课、看文献的学生，这个价位很难找到更大屏的选择。',mem:[16],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东游戏本榜 TOP10',reviews:'2万+条评价',url:item(100357788160),img:'assets/products/wuwei16se.jpg',spec:[['CPU','Core 5 320'],['内存','16GB'],['SSD','512GB'],['GPU','核显'],['屏幕','16英寸 · 144Hz']]}
+]},
+{id:'jiaolong16pro',brand:'机械革命',cat:'高性能笔记本',pick:'16英寸',name:'蛟龙16 Pro 2026 RTX 5070 Ti',desc:'本期榜单里显卡规格最高的一档，32GB 内存起步。适合动画、影视、重度三维渲染，以及想在本地跑 AI 模型（推理/微调）的同学。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东游戏本榜 TOP6',reviews:'2万+条评价',url:item(100357227126),img:'assets/products/jiaolong16pro.jpg',spec:[['CPU','锐龙 9 8945HX'],['内存','32GB'],['SSD','1TB'],['GPU','RTX 5070 Ti'],['屏幕','16英寸 · 2.5K · 300Hz']]}
+]},
+{id:'xiaoxinair14',brand:'联想',cat:'轻薄办公本',pick:'14英寸',name:'小新 Air 14 2026',ver:'酷睿版 / 锐龙版',desc:'京东 2026 高考生笔记本销量榜第 1。薄至 11.9mm、轻至 1.06kg，2.8K OLED 120Hz 屏，适合每天要在教学楼、图书馆、宿舍之间来回搬的同学。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'14英寸',grp:'14',tag:'高考生笔记本销量榜 TOP1',reviews:'京东笔记本品类前列',url:js('联想小新Air 14 2026'),img:'assets/products/xiaoxinair14.jpg',spec:[['CPU','酷睿 Ultra 5'],['内存','16GB'],['SSD','512GB / 1TB'],['GPU','核显'],['屏幕','14英寸 · 2.8K · OLED · 120Hz']]}
+]},
+{id:'zhan66',brand:'惠普',cat:'轻薄办公本',pick:'16英寸',name:'战66 2026',ver:'锐龙版 / 酷睿版',desc:'商务本里的"老实人"：接口全、耐造、有上门服务。京东显示买过的人超过 20 万，618 笔记本热卖榜第 5，也是唯一长期在榜的纯商务机型。',mem:[16,24,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东618笔记本热卖榜 TOP5',reviews:'20万+人买过',url:js('惠普战66 16英寸'),img:'assets/products/zhan66.jpg?v=2',spec:[['CPU','锐龙 7 H 255'],['内存','16GB / 24GB'],['SSD','512GB / 1TB'],['GPU','核显'],['屏幕','16英寸 · 2.5K']]},
+ {size:'14英寸',grp:'14',tag:'京东618笔记本热卖榜 TOP5',reviews:'20万+人买过',url:js('惠普战66 14英寸 2026'),img:'assets/products/zhan66.jpg?v=2',spec:[['CPU','锐龙 7 H 255'],['内存','16GB 起'],['SSD','512GB / 1TB'],['GPU','核显'],['屏幕','14英寸']]}
+]},
+{id:'thinkbookp',brand:'联想',cat:'轻薄办公本',pick:'16英寸',name:'ThinkBook 14+ / 16+ 2026',ver:'酷睿版 / 锐龙版',flat:true,desc:'618 笔记本热卖榜 TOP10 里联想占了 4 席，其中就有 ThinkBook 14+ 与 16+。定位比小新更偏商务，接口与键盘更好，写代码、跑数据、做方案都能覆盖。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东618笔记本热卖榜 TOP10',reviews:'联想上榜机型',url:js('ThinkBook 16+ 2026'),img:'assets/products/thinkbookp.jpg',spec:[['CPU','酷睿 Ultra 5 / 7'],['内存','16GB / 32GB'],['SSD','1TB'],['GPU','核显'],['屏幕','16英寸 · 2.5K']]},
+ {size:'14英寸',grp:'14',tag:'京东618笔记本热卖榜 TOP10',reviews:'联想上榜机型',url:js('ThinkBook 14+ 2026'),img:'assets/products/thinkbookp.jpg',spec:[['CPU','酷睿 Ultra 5 / 7'],['内存','16GB / 32GB'],['SSD','1TB'],['GPU','核显'],['屏幕','14英寸 · 2.8K']]}
+]},
+{id:'redmibook14',brand:'小米',cat:'轻薄办公本',pick:'14英寸',name:'REDMI Book 14 焕新版',desc:'京东学生轻薄本热卖榜 TOP10 里价格最低的一档，国补后约 3399 元。标压处理器 + 金属机身 + 可扩展硬盘，性价比是这个价位最大的卖点。',mem:[16],ssd:['512GB','1TB'],variants:[
+ {size:'14英寸',grp:'14',tag:'京东学生轻薄本热卖榜 TOP10',reviews:'入门价位爆款',url:js('REDMI Book 14 焕新版'),img:'assets/products/redmibook14.jpg',spec:[['CPU','酷睿 i5-13420H（8核12线程）'],['内存','16GB'],['SSD','512GB / 1TB'],['GPU','核显'],['屏幕','14英寸护眼屏']]}
+]},
+{id:'honorx16',brand:'荣耀',cat:'轻薄办公本',pick:'16英寸',name:'荣耀笔记本 X16 锐龙版',ver:'锐龙版 / 酷睿版',desc:'618 笔记本热卖榜第 9，也是学生轻薄本榜常客。低价大屏路线，荣耀手机用户还能用多屏协同传文件，适合预算有限但想要 16 英寸大屏的同学。',mem:[16],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'京东618笔记本热卖榜 TOP9',reviews:'大屏入门款',url:js('荣耀笔记本 X16 锐龙版'),img:'assets/products/honorx16.jpg',spec:[['CPU','锐龙 5 6600U（6核12线程）'],['内存','16GB'],['SSD','512GB / 1TB'],['GPU','核显'],['屏幕','16英寸']]}
+]},
+{id:'douzhanzhe',brand:'联想来酷',cat:'高性能笔记本',pick:'16英寸',name:'斗战者 战7000',desc:'联想旗下互联网品牌，靠低价 + RTX 5060 冲上过笔记本综合榜第 5。预算卡得很死、又必须要独显跑工科软件时可以看它，外观和屏幕素质按低价位的标准看待即可。',mem:[16],ssd:['512GB','1TB'],variants:[
+ {size:'16英寸',grp:'16',tag:'曾登京东笔记本综合榜 TOP5',reviews:'10万+条评价',url:js('来酷 斗战者 战7000'),img:'assets/products/douzhanzhe.jpg',spec:[['CPU','酷睿 i7-14650HX'],['内存','16GB'],['SSD','1TB'],['GPU','RTX 5060'],['屏幕','16英寸 · 2.5K · 180Hz']]}
+]},
+{id:'adou14air',brand:'华硕',cat:'轻薄办公本',pick:'14英寸',name:'a豆14 Air 2026',desc:'京东学生轻薄本热卖榜 TOP10。主打轻量和续航，32GB + 1TB 版本适合不想大学四年被内存和硬盘卡住的同学。',mem:[16,32],ssd:['512GB','1TB'],variants:[
+ {size:'14英寸',grp:'14',tag:'京东学生轻薄本热卖榜 TOP10',reviews:'轻薄旗舰级配置',url:js('华硕 a豆14 Air 2026'),img:'assets/products/adou14air.jpg',spec:[['CPU','锐龙 AI 9 H'],['内存','32GB'],['SSD','1TB'],['GPU','核显'],['屏幕','14英寸 · 2.8K · 高刷']]}
+]},
+{id:'macbookneo',brand:'苹果',cat:'Mac',pick:'13英寸',name:'MacBook Neo 13 英寸',desc:'京东学生轻薄本热卖榜第 2、618 笔记本热卖榜第 2。搭载 A18 Pro 芯片、深度整合 Apple Intelligence，主打轻薄耐用。8GB 统一内存，256GB / 512GB 两种存储可选。',warn:'同样是 macOS，仅限 Windows 的工科教学软件不可用，下单前请核对学院软件清单。',mem:[8],ssd:['256GB','512GB'],variants:[
+ {size:'13英寸',grp:'14',tag:'学生轻薄本榜 TOP2 · 618榜 TOP2',reviews:'Mac 品类前列',url:js('MacBook Neo 13 A18 Pro'),img:'assets/products/macbookneo.jpg',spec:[['CPU','Apple A18 Pro（6核CPU / 5核GPU）'],['内存','8GB 统一内存'],['SSD','256GB / 512GB'],['GPU','A18 Pro 集成显卡'],['屏幕','13英寸']]}
+]}
+];
+
+let activeFilter='全部';
+// 注意：这里必须限定在 #filters 容器内，推荐机型区的 .filter（data-size）不能被覆盖绑定
+function renderFilters(){
+  const fs=['全部','轻办公型','数据分析型','程序开发型','工程设计型','创作/AI型'];
+  document.getElementById('filters').innerHTML=fs.map(f=>`<button class="filter ${f===activeFilter?'active':''}" type="button" data-filter="${f}" aria-pressed="${f===activeFilter}">${f}</button>`).join('');
+  document.querySelectorAll('#filters .filter').forEach(b=>{
+    b.addEventListener('click',()=>{activeFilter=b.dataset.filter;renderFilters();renderMajors()});
+  });
+}
+// 搜索时也匹配该专业可选机型名，方便搜"拯救者"反查专业
+function getFiltered(){const q=document.getElementById('search').value.trim().toLowerCase();return majors.filter(m=>(activeFilter==='全部'||m[1]===activeFilter)&&(!q||(m.join(' ')+' '+recFor(m).map(id=>byId[id].name).join(' ')).toLowerCase().includes(q)))}
+// 按专业需求把「所有符合条件」的机型算出来，而不是每台手写几台
+const POOL={
+  thin:['xiaoxinair14','xiaoxin16se','wuwei16se','redmibook14','honorx16','adou14air','zhan66'],
+  pro:['xiaoxinpro16','thinkbookp'],
+  gpu:['tianxuan7pro','y7000p','y7000x','y9000p','r9000p','omenpro16','jiaolong16pro','tianxuan6pro','rogmoba','jiguangx','douzhanzhe'],
+  mac:['macbookair','macbookneo','mbp14']
+};
+const MAC_LIBERAL=new Set(['汉语言文学','历史学','哲学','法学','英语','教育学','新闻学','社会学']);
+const MAC_CREATIVE=new Set(['广播电视学','数字媒体艺术','动画','影视摄影与制作','视觉传达设计']);
+const NO_MAC=new Set(['人工智能','游戏设计']); // 本地 CUDA / UE 项目，Mac 不合适
+const ORDER=series.map(s=>s.id);
+function recFor(m){
+  const name=m[0],type=m[1],gpu=m[4];
+  let ids;
+  if(gpu==='yes'){
+    ids=POOL.gpu.slice();
+    if(type==='创作/AI型'&&MAC_CREATIVE.has(name))ids.push('mbp14');
+  }else if(gpu==='maybe'){
+    ids=[...POOL.pro,...POOL.gpu];
+    if(MAC_CREATIVE.has(name))ids.push('mbp14');
+    if(MAC_LIBERAL.has(name))ids.push('macbookair','macbookneo');
+  }else{
+    ids=[...POOL.thin,...POOL.pro];
+    if(MAC_LIBERAL.has(name))ids.push('macbookair','macbookneo');
+  }
+  if(NO_MAC.has(name))ids=ids.filter(i=>i!=='mbp14'&&i!=='macbookair'&&i!=='macbookneo');
+  return [...new Set(ids)].filter(id=>byId[id]).sort((a,b)=>ORDER.indexOf(a)-ORDER.indexOf(b));
+}
+function groupedIds(ids){
+  const cats=[['轻薄办公本','轻薄办公本'],['高性能笔记本','高性能笔记本'],['Mac（Apple 芯片）','Mac']];
+  return cats.map(([label,cat])=>[label,ids.filter(id=>byId[id]&&byId[id].cat===cat)]).filter(([,list])=>list.length);
+}
+function recOptions(ids){
+  if(!ids.length)return '';
+  const html=groupedIds(ids).map(([label,list])=>`<optgroup label="${label}">${list.map(id=>`<option value="${id}">${byId[id].name}</option>`).join('')}</optgroup>`).join('');
+  return `<select class="rec-select" aria-label="推荐机型"><option value="">选择推荐机型（${ids.length} 款）</option>${html}</select>`;
+}
+function renderMajors(){const rows=getFiltered();document.getElementById('majorBody').innerHTML=rows.map(m=>`<tr data-major="${m[0]}"><td><strong>${m[0]}</strong></td><td><span class="chip">${m[1]}</span></td><td>${m[2].split('、').map(s=>`<span class="chip">${s}</span>`).join('')}</td><td>${recOptions(recFor(m))}</td></tr>`).join('');document.getElementById('empty').style.display=rows.length?'none':'block'}
+function setCat(c){activeCat=c;document.querySelectorAll('[data-cat]').forEach(x=>{const on=x.dataset.cat===c;x.classList.toggle('active',on);x.setAttribute('aria-pressed',String(on))})}
+function setSize(z){activeSize=z;document.querySelectorAll('[data-size]').forEach(x=>{const on=x.dataset.size===z;x.classList.toggle('active',on);x.setAttribute('aria-pressed',String(on))})}
+// 下拉菜单主导展示：选中某机型时只渲染那一台，并隐藏无关的筛选栏
+function showBars(v){
+  const cb=document.getElementById('catBar');
+  if(cb)cb.hidden=!v;
+}
+function viewAll(){
+  activeSeries=null;
+  document.querySelectorAll('.rec-select').forEach(sel=>{sel.value=''});
+  showBars(true);renderRecs();
+}
+function jumpToSeries(id){
+  const s=byId[id];if(!s)return;
+  if(!activeSeries){ // 浏览全部时，先把类别筛选放宽到能显示它，避免返回后状态错乱
+    if(activeCat!=='全部'&&s.cat!==activeCat)setCat('全部');
+  }
+  activeSeries=id;
+  showBars(false);
+  renderRecs();
+  const el=document.querySelector('.rec[data-series="'+id+'"]');
+  if(!el)return;
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  el.classList.add('flash');
+  clearTimeout(window.__flashTimer);
+  window.__flashTimer=setTimeout(()=>el.classList.remove('flash'),2200);
+}
+const byId=Object.fromEntries(series.map(s=>[s.id,s]));
+let activeSize='全部尺寸',activeCat='全部',activeSeries=null;
+const picked={}; // 用户在卡片内手动切换的版本序号
+function variantIndex(s){
+  if(activeSize!=='全部尺寸'){
+    const i=s.variants.findIndex(v=>v.grp===activeSize);
+    if(i>=0)return i;
+  }
+  const p=picked[s.id];
+  if(typeof p==='number'&&p<s.variants.length&&(activeSize==='全部尺寸'||s.variants[p].grp===activeSize))return p;
+  const d=s.variants.findIndex(v=>v.size===s.pick);
+  return d>=0?d:0;
+}
+// 卡片配置列表：内存 / SSD 跨所有在售版本聚合成档位（如 16G/32G、512GB/1TB），其余参数跟随当前选中版本
+function aggMemSsd(s,key){
+  const mems=new Set(),ssds=new Set();
+  s.variants.forEach(v=>{
+    const f=v.spec.find(x=>x[0]===key);if(!f)return;
+    if(key==='内存')(f[1].match(/\d+GB/g)||[]).forEach(x=>mems.add(parseInt(x)));
+    else (f[1].match(/512GB|\d+TB/g)||[]).forEach(x=>ssds.add(x));
+  });
+  if(key==='内存')return mems.size?[...mems].sort((a,b)=>a-b).join('G/')+'G':'';
+  const ord={'512GB':0,'1TB':1,'2TB':2,'4TB':3};
+  return ssds.size?[...ssds].sort((a,b)=>ord[a]-ord[b]).join('/'):'';
+}
+// 卡片配置列表：内存 / SSD 优先展示厂家产品线档位（series.mem / series.ssd），
+// 未标注的机型回退为跨 variants 聚合；其余参数跟随当前选中版本
+function memSsdOf(s,key){
+  if(key==='内存')return Array.isArray(s.mem)?s.mem.slice().sort((a,b)=>a-b).join('G/')+'G':aggMemSsd(s,key);
+  return Array.isArray(s.ssd)?s.ssd.join('/'):aggMemSsd(s,key);
+}
+function renderRecs(){
+ // 排版规则：浏览全部时 Mac 类统一排在最后，其余按榜单原序
+ const base=activeSeries?series.filter(s=>s.id===activeSeries)
+  :series.filter(s=>(activeCat==='全部'||s.cat===activeCat)&&(activeSize==='全部尺寸'||s.variants.some(v=>v.grp===activeSize)));
+ const rows=base.slice().sort((a,b)=>(a.cat==='Mac')-(b.cat==='Mac'));
+ const cnt=document.getElementById('recCount');if(cnt)cnt.textContent=String(rows.length);
+ const grid=document.getElementById('recGrid');if(grid)grid.classList.toggle('single',!!activeSeries);
+ document.getElementById('recGrid').innerHTML=rows.map(s=>{
+  const vi=variantIndex(s),v=s.variants[vi];
+  // 应用户要求：不做尺寸切换 Tab，厂家提供的全部尺寸统一标在产品照右下角
+  const byInch=(a,b)=>parseInt(a)-parseInt(b);
+  const uniqByInch=arr=>{const m=new Map();arr.forEach(x=>{const k=parseInt(x);if(!m.has(k))m.set(k,x)});return [...m.values()].sort(byInch)};
+  const allSize=uniqByInch(s.variants.map(x=>x.size)).join(' / ');
+  const allScreen=uniqByInch(s.variants.map(x=>{const f=x.spec.find(y=>y[0]==='屏幕');return f?f[1]:''}).filter(Boolean)).join(' / ');
+  // 应用户要求：页面不显示任何笔记本图片，全部用品牌占位块
+  // 图片白名单：仅渲染用户已确认提供产品照的机型，其余保持品牌占位块
+  const SHOW_IMGS=['zhan66','xiaoxin16se','tianxuan7pro','adou14air','honorx16','redmibook14','thinkbookp','xiaoxinpro16','wuwei16se','xiaoxinair14','y7000x','tianxuan6pro','y7000p','jiguangx','y9000p','r9000p','omenpro16','rogmoba','jiaolong16pro','douzhanzhe','macbookair','macbookneo','mbp14'];
+  const thumb=SHOW_IMGS.some(k=>v.img&&v.img.indexOf(k)>=0)?`<img src="${v.img}" alt="${s.name} ${v.size}" loading="lazy" decoding="async" width="300" height="172">`:`<span class="thumb-fallback">${s.brand}</span>`;
+  return `<article class="rec" data-series="${s.id}"><div class="thumb">${thumb}<span class="label">${s.cat==='Mac'?s.brand:s.cat+' · '+s.brand}</span>${s.ver?`<span class="ov-tr"><span class="ovb ov-ver">${s.ver}</span></span>`:''}<span class="ov-br"><span class="ovb ov-size">${allSize}</span>${s.warn?`<button type="button" class="warn-badge" aria-expanded="false" title="点击查看购买提醒">⚠</button>`:''}</span></div><h3>${s.name}</h3>${s.warn?`<div class="warn" hidden>⚠ ${s.warn}</div>`:''}<dl>${v.spec.map(x=>{let val=x[1];if(x[0]==='内存'||x[0]==='SSD'){const a=memSsdOf(s,x[0]);if(a)val=a}if(x[0]==='屏幕'&&allScreen)val=allScreen;return `<dt>${x[0]}</dt><dd>${val}</dd>`}).join('')}</dl><div class="actions"><a class="single" href="${v.url}" target="_blank" rel="noopener">查看京东自营实时价格</a></div></article>`
+ }).join('');
+ document.querySelectorAll('.variant-tab[data-series]').forEach(b=>b.addEventListener('click',()=>{picked[b.dataset.series]=Number(b.dataset.variant);renderRecs()}));
+ document.querySelectorAll('.warn-badge').forEach(b=>b.addEventListener('click',()=>{const w=b.closest('.rec').querySelector('.warn');const willHide=!w.hidden;w.hidden=willHide;b.setAttribute('aria-expanded',String(!willHide));}));
+}
+document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{setCat(b.dataset.cat);renderRecs()}));
+// 微信按钮：悬停即显示（CSS），点击可切换（适配触屏）
+const wxWrap=document.getElementById('wxWrap'),wxBtn=document.getElementById('wxBtn');
+if(wxBtn&&wxWrap){wxBtn.addEventListener('click',()=>{const on=wxWrap.classList.toggle('open');wxBtn.setAttribute('aria-expanded',String(on))});document.addEventListener('click',e=>{if(!wxWrap.contains(e.target)){wxWrap.classList.remove('open');wxBtn.setAttribute('aria-expanded','false')}})}
+// 专业表里每一行一个下拉：选定机型后跳到推荐区并只展示那一台
+document.getElementById('majorBody').addEventListener('change',e=>{
+  const sel=e.target.closest('.rec-select');
+  if(!sel)return;
+  if(sel.value)jumpToSeries(sel.value); // 选回占位项不处理，避免误认为要返回全部
+});
+document.getElementById('searchBtn').addEventListener('click',()=>{activeFilter='全部';renderFilters();renderMajors();document.getElementById('majors').scrollIntoView({behavior:'smooth',block:'start'});});
+document.getElementById('search').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();document.getElementById('searchBtn').click()}});
+renderFilters();renderMajors();renderRecs();
+</script>
+</body>
+</html>
